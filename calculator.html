@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculator</title>
+  <style type="text/css">
+   TABLE {
+    width: 300px;
+    border-collapse: collapse;
+   }
+   TD, TH {
+    padding: 3px;
+    border: 1px solid black;
+   }
+   TH {
+    background: #b0e0e6;
+   }
+  </style>
+  <script type="text/javascript">
+  var resultV,resultF,resultS;
+
+  function cvso() {
+    var vso1,vso2, vso3, vsom;
+    vso1 = document.getElementById('vso1').value;
+    vso1 = parseInt (vso1);
+
+    vso2 = document.getElementById('vso2').value;
+    vso2 = parseInt (vso2);
+
+    vso3 = document.getElementById('vso3').value;
+    vso3 = parseInt (vso3);
+
+    vsom = document.getElementById('vsom').value;
+    vsom = parseInt (vsom);
+
+    resultV = Math.round((vso1+vso2+vso3)/vsom*30)//.toString() + "%";
+
+    document.getElementById('outVso').innerHTML = resultV;
+
+  }
+
+  function fo() {
+    var fo1,fo2, fo3, fo4, fom;
+    fo1 = document.getElementById('fo1').value;
+    fo1 = parseInt (fo1);
+
+    fo2 = document.getElementById('fo2').value;
+    fo2 = parseInt (fo2);
+
+    fo3 = document.getElementById('fo3').value;
+    fo3 = parseInt (fo3);
+
+    fo4 = document.getElementById('fo4').value;
+    fo4 = parseInt (fo4);
+
+    fom = document.getElementById('fom').value;
+    fom = parseInt (fom);
+
+    resultF = Math.round((fo1+fo2+fo3+fo4)/fom*40)//.toString() + "%";
+
+    document.getElementById('outFo').innerHTML = resultF;
+
+  }
+  function so() {
+    var so, som;
+    so = document.getElementById('so').value;
+    so = parseInt (so);
+
+    som = document.getElementById('som').value;
+    som = parseInt (som);
+
+    resultS = Math.round(so/som*30)//.toString() + "%";
+
+    document.getElementById('outSo').innerHTML = resultS;
+
+  }
+  function rezult() {
+    var cvso, so, fo, result;
+
+    result = resultV+resultS+resultF;
+
+    document.getElementById('outAll').innerHTML = result;
+
+
+  }
+</script>
+</head>
+<body>
+  <div>
+    <label>Балл ВСО I:</label>
+    <input type="text" id="vso1" size="1">
+    <label>Балл ВСО ІІ:</label>
+    <input type="text" id="vso2" size="1">
+    <label>Балл ВСО ІІI:</label>
+    <input type="text" id="vso3" size="1">
+    <label>Балл ВСО MAX:</label>
+    <input type="text" id="vsom" size="1">
+    <p>
+      <label>ФО І четверть:</label>
+      <input type="text" id="fo1" size="1">
+      <label>ФО ІI четверть:</label>
+      <input type="text" id="fo2" size="1">
+      <label>ФО ІII четверть:</label>
+      <input type="text" id="fo3" size="1">
+      <label>ФО ІV четверть:</label>
+      <input type="text" id="fo4" size="1">
+      <label> ФО MAX:</label>
+      <input type="text" id="fom" size="1">
+    </p>
+    <p>
+      <label>Балл внешнего СО:</label>
+      <input type="text" id="so" size="1">
+      <label>MAX внешнего СО:</label>
+      <input type="text" id="som" size="1">
+    </p>
+    <p>
+      <button onclick="cvso(), so(), fo(), rezult()">Вычислить</button>
+    </p>
+  </div>
+  <div>
+    <hr>
+    <p>
+      <label>Доля ВСО:</label>
+      <output id="outVso">0</output>
+    </p>
+    <p>
+      <label>Доля ФО:</label>
+      <label id="outFo">0</label>
+    </p>
+    <p>
+      <label>Доля внешнего СО:</label>
+      <output id="outSo">0</output>
+    </p>
+
+    <p>
+      <label>Итого:</label>
+      <output id="outAll">0</output>
+    </p>
+  </div>
+  <table border="1">
+    <tr>
+      <th>Процент</th>
+      <th>Оценки</th>
+      <th>Оценки по 5</th>
+    </tr>
+    <tr>
+      <td>90%</td>
+      <td>A*</td>
+      <td rowspan="2">5</td>
+    </tr>
+    <tr>
+      <td>80%</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <td>67%</td>
+      <td>B</td>
+      <td rowspan="2">4</td>
+    </tr>
+    <tr>
+      <td>60%</td>
+      <td>C</td>
+    </tr>
+    <tr>
+      <td>50%</td>
+      <td>D</td>
+      <td rowspan="2">2</td>
+    </tr>
+    <tr>
+      <td>30%</td>
+      <td>E</td>
+    </tr>
+  <table>
+
+</body>
+</html>
